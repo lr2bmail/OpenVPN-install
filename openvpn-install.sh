@@ -77,10 +77,10 @@ newclient () {
 	echo "<key>" >> $homeDir/$1.ovpn
 	cat /etc/openvpn/easy-rsa/pki/private/$1.key >> $homeDir/$1.ovpn
 	echo "</key>" >> $homeDir/$1.ovpn
-	echo "key-direction 1" >> $homeDir/$1.ovpn
-	echo "<tls-auth>" >> $homeDir/$1.ovpn
-	cat /etc/openvpn/tls-auth.key >> $homeDir/$1.ovpn
-	echo "</tls-auth>" >> $homeDir/$1.ovpn
+	#echo "key-direction 1" >> $homeDir/$1.ovpn
+	#echo "<tls-auth>" >> $homeDir/$1.ovpn
+	#cat /etc/openvpn/tls-auth.key >> $homeDir/$1.ovpn
+	#echo "</tls-auth>" >> $homeDir/$1.ovpn
 }
 
 # Try to get our IP from the system and fallback to the Internet.
@@ -686,9 +686,9 @@ verify-x509-name $SERVER_NAME name
 auth SHA256
 auth-nocache
 $CIPHER
-tls-client
-tls-version-min 1.2
-tls-cipher TLS-DHE-RSA-WITH-AES-128-GCM-SHA256
+#tls-client
+#tls-version-min 1.2
+#tls-cipher TLS-DHE-RSA-WITH-AES-128-GCM-SHA256
 setenv opt block-outside-dns
 verb 3" >> /etc/openvpn/client-template.txt
 
