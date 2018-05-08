@@ -552,14 +552,15 @@ echo "crl-verify crl.pem
 ca ca.crt
 cert $SERVER_NAME.crt
 key $SERVER_NAME.key
-tls-auth tls-auth.key 0
+#tls-auth tls-auth.key 0
 dh dh.pem
 auth SHA256
 $CIPHER
-tls-server
-tls-version-min 1.2
-tls-cipher TLS-DHE-RSA-WITH-AES-128-GCM-SHA256
+#tls-server
+#tls-version-min 1.2
+#tls-cipher TLS-DHE-RSA-WITH-AES-128-GCM-SHA256
 status openvpn.log
+duplicate-cn
 verb 3" >> /etc/openvpn/server.conf
 
 	# Create the sysctl configuration file if needed (mainly for Arch Linux)
