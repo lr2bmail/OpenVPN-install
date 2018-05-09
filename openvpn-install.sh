@@ -693,7 +693,7 @@ $CIPHER
 #tls-version-min 1.2
 #tls-cipher TLS-DHE-RSA-WITH-AES-128-GCM-SHA256
 setenv opt block-outside-dns
-shaper 1000000
+
 verb 3" >> /etc/openvpn/client-template.txt
 
 	# Generate the custom client.ovpn
